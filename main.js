@@ -1,9 +1,9 @@
-const { app, BrowserWindow, Notification } = require('electron/main')
+const { app, BrowserWindow, Notification } = require('electron')
 
 function createWindow () {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600
+        width: 500,
+        height: 80
     })
 
     win.loadFile('index.html')
@@ -18,7 +18,7 @@ function showNotification () {
 
 
 app.whenReady().then(createWindow).then(() => {
-    setInterval(showNotification, 5000);
+    setInterval(showNotification, 10000);
 });
 
 app.on('window-all-closed', () => {

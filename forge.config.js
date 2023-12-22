@@ -1,13 +1,19 @@
 module.exports = {
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'RyosukeTokushima',
+          name: "notificationapp"
+        },
+        prerelease: false,
+        draft: true
+      },
+    },
+  ],
   packagerConfig: {
-    osxSign: {},
     asar: true,
-    osxNotarize: {
-      tool: 'notarytool',
-      appleId: process.env.APPLE_ID,
-      appleIdPassword: process.env.APPLE_PASSWORD,
-      teamId: process.env.APPLE_TEAM_ID
-    }
   },
   rebuildConfig: {},
   makers: [
